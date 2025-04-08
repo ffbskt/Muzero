@@ -19,8 +19,8 @@ from MuZero.Networks import Representation_Model, Dynamics_Model, Prediction_Mod
 from MuZero.Experience_Replay import Experience_Replay
 
 def train():
-    # Define device in one place
-    device = torch.device('cpu')  # Change to 'cuda' if GPU is available
+    # Define device in one place - use CUDA if available
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     dtype = torch.float
     
     # Setup TensorBoard writer

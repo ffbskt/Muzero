@@ -58,7 +58,6 @@ class Env_Wrapper(gym.Wrapper):
         self.Return += reward
         if done:
             info["return"] = self.Return
-            print("Return:",self.Return)
         
         # Return in the format expected by the rest of the code
         return obs, reward, done, info
